@@ -1,6 +1,10 @@
 # Gain.POS
 Laravel + vue based POS application!
 
+Use:
+node v14.0.0
+npm v6.14.4
+php v8.0.6
 
 ## How to run the application
 
