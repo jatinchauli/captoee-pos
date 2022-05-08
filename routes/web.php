@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Application\SalesController;
 
 Route::group([], function () {
     require_once(__DIR__ . '/additional/additional.php');
@@ -19,6 +20,8 @@ Route::group(['middleware' => ['auth']], function () {
     require_once(__DIR__ . '/report/reportRoutes.php');
     require_once(__DIR__ . '/setting/setting.php');
     require_once(__DIR__ . '/todo/todo.php');
+
+    Route::get('new-sales', [SalesController::class, 'index']);
 
     //logout
     Route::get('/logout', [LoginController::class, 'logout']);

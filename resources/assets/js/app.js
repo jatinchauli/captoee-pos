@@ -48,7 +48,14 @@ Vue.prototype.trans = (string, args) => {
     });
     return value;
 };
+window.trans = (string, args) => {
+    let value = _.get(window.i18n, string);
 
+    _.eachRight(args, (paramVal, paramKey) => {
+        value = _.replace(value, `:${paramKey}`, paramVal);
+    });
+    return value;
+}
 const datepickerOptions = {};
 
 //Vue Toasted
@@ -183,6 +190,12 @@ Vue.prototype.salesInvoiceLogo = window.appConfig.salesInvoiceLogo;
 Vue.prototype.purchaseInvoiceLogo = window.appConfig.purchaseInvoiceLogo;
 
 Vue.component('searchable-select', require('./components/helperComponent/searchable-select/Index.vue'));
+
+
+//New sales components
+Vue.component('add-sale', require('./components/application/components/sales/AddSale.vue'));
+
+
 
 //Auth components
 Vue.component('common-submit-button', require('./components/commonComponents/submitButton.vue'));

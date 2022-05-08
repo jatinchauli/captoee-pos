@@ -11,6 +11,6 @@
         |
         */
 
-        'hello2' => 'Hello2 updated by custom language'
-
+        'hello2' => 'Hello2 updated by custom language',
+        "custom_text" => "Custom Text",
     ];
