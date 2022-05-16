@@ -161,11 +161,11 @@ export default {
                 this.item.qty = 0;
             } else if(this.item.qty > 0 && this.item.qty <= this.total_stocks) {
                 this.disabled = false;
-                this.alertMessage = (this.total_stocks - this.item.qty) + this.handleAlertMessage(this.total_stocks - this.item.qty);
+                this.alertMessage = parseInt(this.total_stocks - this.item.qty) + this.handleAlertMessage(this.total_stocks - this.item.qty);
             } else if(this.item.qty > this.total_stocks) {
                 this.item.qty = this.total_stocks;
             } else if(this.item.qty == 0) {
-                this.alertMessage = (this.total_stocks - this.item.qty) + this.handleAlertMessage(this.total_stocks - this.item.qty);
+                this.alertMessage = parseInt(this.total_stocks - this.item.qty) + this.handleAlertMessage(this.total_stocks - this.item.qty);
             }
         },
 
@@ -224,14 +224,14 @@ export default {
             })
             .then(res => {
                 
-                this.total_stocks = res.data.stock;
+                this.total_stocks = parseInt(res.data.stock);
                 this.isOutOfStock = true;
                 if(this.total_stocks == 0) {
                     this.disabled = true;
                     this.alertMessage = data.product_name + this.trans('lang.is_out_of_stock');
                 } else {
                     if(this.total_stocks) {
-                        this.alertMessage = this.total_stocks + this.handleAlertMessage(this.total_stocks);
+                        this.alertMessage = parseInt(this.total_stocks) + this.handleAlertMessage(this.total_stocks);
                         this.isOutOfStock = true;
                         this.disabled = false;
                     }
