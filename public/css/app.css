@@ -18196,7 +18196,7 @@ a.nav-link {
 }
 
 .invoice-page-wrapper .thermal-invoice .invoice-header img {
-  width: 100% !important;
+  width: 43% !important;
 }
 
 .invoice-page-wrapper .thermal-invoice .invoice-header .app-name {
@@ -18274,3 +18274,8 @@ a.nav-link {
   color: gray;
 }
 
+
+.invoice-header .img-fluid {
+  width: 43%!important;
+  border-radius: 3px;
+}

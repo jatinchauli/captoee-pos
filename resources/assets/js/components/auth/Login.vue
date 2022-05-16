@@ -5,7 +5,7 @@
                 <div class="col-12 col-md-6 offset-md-6 col-lg-4 offset-lg-8 col-xl-4 offset-xl-8 pl-0">
                     <div class="sign-in-sign-up-content">
                         <form class="sign-in-sign-up-form">
-                            <div class="text-center mb-4 application-logo">
+                            <div class="text-center mb-4 application-logo custom-application-logo">
                                 <img :src="publicPath+'/uploads/logo/'+appLogo" alt="" class="img-fluid logo">
                             </div>
                             <div class="form-row">
@@ -147,3 +147,11 @@
         }
     }
 </script>
+
+<style scoped>
+    .custom-application-logo img {
+        background: #000;
+        padding: 4px 10px;
+    }
+
+</style>

@@ -22,6 +22,10 @@ Route::group(['middleware' => ['auth']], function () {
     require_once(__DIR__ . '/todo/todo.php');
 
     Route::get('new-sales', [SalesController::class, 'index']);
+    Route::post('save-sales', [SalesController::class, 'store']);
+    Route::get('getProductDetails', [SalesController::class, 'getProductDetails']);
+    Route::get('getSellerList', [SalesController::class, 'getSellerList']);
+    Route::get('fetchStock', [SalesController::class, 'fetchStockOnSeller']);
 
     //logout
     Route::get('/logout', [LoginController::class, 'logout']);
